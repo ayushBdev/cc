@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@mixin scroll() {
+	@apply overflow-x-hidden overflow-y-auto overscroll-auto;
+	scroll-behavior: smooth;
+
+	&::-webkit-scrollbar {
+		@apply w-1 my-1;
+	}
+
+	&::-webkit-scrollbar-track {
+		@apply my-1 bg-transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		@apply my-1 rounded-full bg-neutral-400;
+	}
+};
+
+@layer base {
+	input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type=number] {
+	    -moz-appearance: textfield;
+	}
+
+	.scrollbar {
+		@include scroll();
+	}
+
+	.scrollbar-hidden {
+		@include scroll();
+
+		&::-webkit-scrollbar {
+			@apply w-0;
+		}
+	}
+
+	.scrollbar-sm {
+		@include scroll();
+
+		&::-webkit-scrollbar {
+			@apply w-0.5;
+		}
+	}
+
+	.scrollbar-md {
+		@include scroll();
+
+		&::-webkit-scrollbar {
+			@apply w-1.5;
+		}
+	}
+
+	.scrollbar-lg {
+		@include scroll();
+
+		&::-webkit-scrollbar {
+			@apply w-2;
+		}
+	}
+
+	.rpv-core__inner-pages {
+		@include scroll();
+	}
+
+	.test-red {
+		@apply border-2 border-red-600 border-solid;
+	}
+
+	.test-blue {
+		@apply border-2 border-primary border-solid;
+	}
+
+	.test-green {
+		@apply border-2 border-green-600 border-solid;
+	}
+
+}

@@ -1,0 +1,62 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+	"baseUrl": ".",
+    "paths": {
+      	"@/*": ["app/*"],
+			"@hooks/*": ["app/hooks/*"],
+			"@styles/*": ["app/styles/*"],
+			"@config/*": ["app/config/*"],
+			"@utli/*": ["app/utlis/*"],
+			"@enums": ["app/config/enums.ts"],
+			"@utlis": ["app/config/utlis.ts"],
+			"@types": ["app/index.types.d.ts"],
+			"@labels": ["app/config/labels.ts"],
+			"@routes": ["app/config/routes.ts"],
+			"@clientEnv": ["app/env/client.mjs"],
+			"@serverEnv": ["app/env/server.mjs"],
+
+			/** Components */
+			"@navbar/*": ["app/components/navbar/*"],
+			"@portals/*": ["app/components/portals/*"],
+			"@errorText/*": ["app/components/errorText/*"],
+			"@userProfile/*": ["app/components/userProfile/*"],
+
+			/** Pages */
+			"@aiChat/*": ["app/ai-chat/[chatId]/*"],
+			"@allDocuments/*": ["app/all-documents/*"],
+			"@upload/*": ["app/all-documents/upload/*"],
+
+			/** Api Routes */
+			"@db/*": ["app/api/db/*"],
+			"@getChatApi/*": ["app/api/get-chat/*"],
+			"@newChatApi/*": ["app/api/new-chat/*"],
+			"@pineconeApi/*": ["app/api/pinecone/*"],
+			"@allChatsApi/*": ["app/api/all-chats/*"],
+			"@resetChatApi/*": ["app/api/reset-chat/*"],
+			"@renameChatApi/*": ["app/api/rename-chat/*"],
+			"@deleteChatApi/*": ["app/api/delete-chat/*"],
+			"@uploadthingApi/*": ["app/api/uploadthing/*"],
+			"@getMessagesApi/*": ["app/api/get-messages/*"],
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
